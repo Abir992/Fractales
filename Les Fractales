@@ -1,0 +1,99 @@
+########################### QUESTION 1
+import random
+import matplotlib.pyplot as plt 
+xn, yn = 0.5 , 0.0
+ordonnees, abscisses = [] , []
+for j in range(30000):
+    p= random.uniform(0,1)
+    if 0<= p <= 0.1 :
+        xn_1 = 0.05*xn
+        yn_1 = 0.6*yn
+    elif 0.1<= p <= 0.2 :
+        xn_1 = 0.05*xn
+        yn_1 = -0.5*yn + 1.0
+    elif 0.2<= p <= 0.4:
+        xn_1 = 0.46*xn -0.32*yn
+        yn_1 = 0.39*xn + 0.38*yn +0.6
+    elif 0.4<= p <= 0.6:
+        xn_1 = 0.47*xn -0.15*yn
+        yn_1 = 0.17*xn + 0.42*yn + 1.1
+    elif 0.6<= p <= 0.8:
+        xn_1 = 0.43*xn +0.28*yn 
+        yn_1 = -0.25*xn + 0.45*yn+ 1.0
+    elif 0.8<= p <= 1:
+        xn_1 = 0.42*xn +0.26*yn
+        yn_1 = -0.35*xn + 0.31*yn + 0.7
+        
+    xn = xn_1
+    yn = yn_1
+    abscisses.append(xn)
+    ordonnees.append(yn)
+ax = plt.gca()
+ax.set_xticks([]) 
+ax.set_yticks([])
+plt.plot(abscisses,ordonnees, 'b.')
+plt.show()
+
+
+################################ QUESTION 2
+import random
+import matplotlib.pyplot as plt 
+xn, yn = 0.05 , 0.0
+ordonnees, abscisses = [] , []
+for j in range(30000):
+    p= random.uniform(0,1)
+    if 0<= p <= 0.02 :
+        xn_1 = 0.5
+        yn_1 = 0.27*yn
+    elif 0.02<= p <= 0.17 :
+        xn_1 = -0.139*xn +0.263*yn +0.57
+        yn_1 = 0.246*xn + 0.224*yn -0.036
+    elif 0.17<= p <= 0.3:
+        xn_1 = 0.17*xn -0.215*yn +0.408
+        yn_1 = 0.222*xn + 0.176*yn +0.0893
+    elif 0.3<= p <= 1:
+        xn_1 = 0.781*xn +0.034*yn +0.1075
+        yn_1 = -0.032*xn + 0.739*yn + 0.27
+   
+        
+    xn = xn_1
+    yn = yn_1
+    abscisses.append(xn)
+    ordonnees.append(yn)
+ax = plt.gca()
+ax.set_xticks([]) 
+ax.set_yticks([])
+plt.plot(abscisses,ordonnees, 'y.')
+plt.show()
+
+
+########################################## QUESTION 3
+import random
+import matplotlib.pyplot as plt 
+ordonnees, abscisses = [] , []
+a1, b1, a2, b2, a3 , b3  = 1.0 , 2.0 , 4.0 , 1.0 , 4.0 , 3.0
+px0 , py0 = 3.0 , 2.0
+
+
+for j in range(15000):
+    p= random.uniform(0,1)
+    if 0<= p <= 0.33 :
+        px = a1+px0 /2
+        py = b1+py0 /2
+    elif 0.33<= p <= 0.66 :
+        px = a2+px0 /2
+        py = b2+py0 /2
+    elif 0.66<= p <= 1:
+        px = a3+px0 /2
+        py = b3+py0 /2
+    
+   
+    px0 = px
+    py0 = py
+    abscisses.append(px0)
+    ordonnees.append(py0)
+ax = plt.gca()
+ax.set_xticks([]) 
+ax.set_yticks([])
+plt.plot(abscisses,ordonnees, 'r.')
+plt.show()
